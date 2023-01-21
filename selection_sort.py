@@ -8,12 +8,10 @@ def selection_sort(_array):
     array = _array # Массив значений
     if array == []: # Если массив пуст
         return None, count
+    length = len(array) # Кол-во элементов в массиве
 
-    low = 0 # Начальный индекс массива
-    high = len(array) # Конечный индекс массива
-
-    for i in range(low, high):
-        for j in range(i+1, high):
+    for i in range(length):
+        for j in range(i+1, length):
             if array[i] > array[j]: # Перестановка элементов
                 array[i], array[j] = array[j], array[i]
             count += 1
