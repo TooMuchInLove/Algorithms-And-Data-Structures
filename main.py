@@ -7,27 +7,42 @@
 # ----------------------------------------
 #
 from time import time
+
 from line_search import line_search
 from binary_search import binary_search
+from bubble_sort import bubble_sort
+from selection_sort import selection_sort
+
 # from quick_sort import quick_sort
 from random import randint
 
 
 if __name__ == '__main__':
     BEGIN = time()
-    # print([randint(0, 100) for _ in range(15)])
+    # print([randint(-10, 100) for _ in range(15)])
     # print([i for i in range(1, 16)])
 
-    array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-    value = 1
-    print('Массив: %s, значение: %d' % (array, value))
+    # array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    # value = 11
+    # print('Массив: %s, значение: %d' % (array, value))
+    #
+    # index, count = line_search(array, value)
+    # print('Линейный поиск. Кол-во итераций: %d' % (count))
+    # print('Найден индекс: %s' % (index))
+    #
+    # index, count = binary_search(array, value)
+    # print('Бинарный поиск. Кол-во итераций: %d' % (count))
+    # print('Найден индекс: %s' % (index))
 
-    index, count = line_search(array, value)
-    print('Найден индекс: %s' % (index))
-    print('Линейный поиск. Кол-во итераций: %d' % (count))
+    array = [-3, 65, 77, -5, 6, -2, 33, -10, 47, 32, 51, -6, -5, 23, 91]
+    print('Массив    до сортировки: %s' % (array))
 
-    index, count = binary_search(array, value)
-    print('Найден индекс: %s' % (index))
-    print('Бинарный поиск. Кол-во итераций: %d' % (count))
+    array, count = bubble_sort(array)
+    print('Сортировка Пузырьком. Кол-во итераций: %d' % (count))
+    print('Массив после сортировки: %s' % (array))
+
+    array, count = selection_sort(array)
+    print('Выборочная сортировка. Кол-во итераций: %d' % (count))
+    print('Массив после сортировки: %s' % (array))
 
     print('Время выполнения: %s' % (time() - BEGIN))
