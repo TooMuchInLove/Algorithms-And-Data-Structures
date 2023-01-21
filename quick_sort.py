@@ -17,10 +17,11 @@ def quick_sort(_array):
     mid = int(length/2)-1
     if length % 2 != 0:
         mid = int(length/2)
-    value = array[mid]
+    value = array[mid] # Выбранное среднее значение массива
 
     for i in range(length):
-        if i == mid: continue
+        if i == mid:
+            continue
         if array[i] < value:
             array_left.append(array[i])
         else:
