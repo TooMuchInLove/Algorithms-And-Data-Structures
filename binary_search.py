@@ -10,8 +10,8 @@ def binary_search(_array, _value):
     if array == []: # Если массив пуст
         return None, count
 
-    low = 0 # Начальное значение массива
-    high = len(array)-1 # Конечное значение массива
+    low = 0 # Начальный индекс массива
+    high = len(array)-1 # Конечный индекс массива
     if array[low] < value > array[high]: # Если значение не входит в массив
         return None, count
 
