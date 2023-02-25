@@ -34,7 +34,7 @@ def removing_duplicates_from_list_dictionary(
     # Текущий ключевой индекс
     key_index = _index
     # Если текущий индекс превышает(равен) кол-ву элементов в списке, то завершаем работу
-    if key_index >= count_items: return listing, count
+    if key_index >= count_items: return (listing, count)
     # Текущее искомое значение
     value = listing[key_index]
     
@@ -44,6 +44,7 @@ def removing_duplicates_from_list_dictionary(
         count_items -= 1
         # Если значения совпадают:
         if listing[count_items] == value:
+            #count += 1
             # И если текущий индекс НЕравен начальному, то удаляем дубликат
             if count_items != key_index:
                 listing.pop(count_items)
@@ -54,20 +55,3 @@ def removing_duplicates_from_list_dictionary(
     
     # Рекурсивный способ поиска и удаления дубликатов
     return removing_duplicates_from_list_dictionary(count, key_index+1, listing)
-
-
-def main():
-    listing = [
-        {"key1": "value1"}, {"k1": "v1", "k2": "v2", "k3": "v3"}, {}, {}, {"key1": "value1"}, {"key1": "value1"}, {"key2": "value2"},
-    ]
-    print('Начальный список: %s' % (listing))
-    listing, count = removing_duplicates_from_list_dictionary(0, 0, listing)
-    print('Конечный  список: %s\nКоличество операций: %s' % (listing, count))
-
-
-if __name__ == '__main__':
-    main()
-
-# Начальный список: [{'key1': 'value1'}, {'k1': 'v1', 'k2': 'v2', 'k3': 'v3'}, {}, {}, {'key1': 'value1'}, {'key1': 'value1'}, {'key2': 'value2'}]
-# Конечный  список: [{'key1': 'value1'}, {'k1': 'v1', 'k2': 'v2', 'k3': 'v3'}, {}, {'key2': 'value2'}]
-# Количество операций: 11
