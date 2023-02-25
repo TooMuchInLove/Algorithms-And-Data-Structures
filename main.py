@@ -16,7 +16,6 @@ from quick_sort import quick_sort
 from removing_duplicates_from_list_dictionary import removing_duplicates_from_list_dictionary
 from fifo import FiFo
 from lifo import LiFo
-
 from parse_excel import excel
 
 
@@ -70,6 +69,6 @@ if __name__ == '__main__':
         lifo.push(value)
     lifo.pop()
 
-    excel("data1.xlsx")
+    excel("data.xlsx")
 
     print('Время выполнения: %s' % (time() - BEGIN))
