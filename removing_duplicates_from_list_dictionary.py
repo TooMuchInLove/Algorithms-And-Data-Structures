@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from typing import List, Tuple
+from typing import Tuple, List, Dict
 
 # --------------------------------------------------- #
 # ----------------- Аннотация типов ----------------- #
@@ -11,7 +11,7 @@ COUNTSOperations = int
 # Текущий индекс
 CURRENTIndex = int
 # Списко словарей
-LISTDictionary = List
+LISTDictionary = List[Dict[str, str]]
 # Возвращаемый кортеж значение :param: List, count
 RETURNTuple = Tuple[LISTDictionary, COUNTSOperations]
 
@@ -44,7 +44,6 @@ def removing_duplicates_from_list_dictionary(
         count_items -= 1
         # Если значения совпадают:
         if listing[count_items] == value:
-            #count += 1
             # И если текущий индекс НЕравен начальному, то удаляем дубликат
             if count_items != key_index:
                 listing.pop(count_items)
