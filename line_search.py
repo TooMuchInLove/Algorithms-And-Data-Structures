@@ -14,9 +14,9 @@ def line_search(_array: IntArray, _value: int) -> IndexAndCount:
     not_found = -1 # Значение по умолчанию
 
     array = _array # Массив значений
-    value = _value # Искомое значение
     if array is []: # Если массив пуст
         return not_found, count
+    value = _value # Искомое значение
     if type(value) is not int: # Если значение НЕ является числом
         return not_found, count
 
